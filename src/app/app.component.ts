@@ -1,13 +1,12 @@
-import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+import { Component } from '@angular/core';
+import { CountdownComponent } from './countdown/countdown.component'; // Import the countdown component
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CountdownComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'FrontendChallenge'
-}
+export class AppComponent { }
+

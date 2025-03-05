@@ -1,0 +1,14 @@
+<div class="countdown-container">
+    <h1>Time to <strong>{{ eventTitle }}</strong></h1>
+    <p>{{ countdownText }}</p>
+  
+    <!-- Input for Event Title -->
+    <label>Title</label>
+    <input type="text" [(ngModel)]="eventTitle" placeholder="Enter event title" />
+  
+    <!-- Input for Event Date -->
+    <label>Date</label>
+    <input type="datetime-local" [(ngModel)]="eventDate" (change)="startCountdown()" />
+  </div>
+  
+    
