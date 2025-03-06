@@ -2,7 +2,7 @@
 .countdown-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; /* Distribute elements properly */
+    justify-content: center;
     align-items: center; /* Center horizontally */
     text-align: center;
     height: 100vh; /* Fix scroll issue by ensuring everything fits */
@@ -44,6 +44,13 @@
     white-space: nowrap;
     overflow: hidden;
     font-family: 'Arial', sans-serif; 
+  }
+
+  h1, p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
   
   /* Form container */
@@ -90,6 +97,56 @@
     transition: all 0.2s ease-in-out; /* Smooth animation when resizing */
     font-family: 'Arial', sans-serif; /* Restore original font */
   }
-  
-  
-  
+
+  /* ✅ Responsive adjustments for smaller screens (Portrait Mode) */
+@media (max-width: 600px) {
+  .countdown-container {
+    padding: 4vh 20px; /* Adjust padding to balance spacing */
+  }
+
+  /* Ensure title stays properly sized */
+  h1 {
+    font-size: min(10vw, 9vh); /* Keep title proportional */
+    margin-top: 20vh;
+    margin-bottom: 0.5vh;
+  }
+
+  /* Ensure countdown stays balanced */
+  p {
+    font-size: min(9vw, 8vh); /* Keep countdown proportional */
+    margin-bottom: 16.5vh; /* More space below countdown */
+  }
+
+  /* Stack inputs vertically instead of side-by-side */
+  .form-container {
+    display: flex;
+    flex-direction: column; /* Stack inputs */
+    align-items: center; /* Center inputs */
+    gap: 6vh; /* Adjust spacing between inputs */
+    width: 90%;
+    max-width: 400px; /* Prevent inputs from stretching too wide */
+    margin-top: 5vh; /* Adjust spacing */
+  }
+
+  .input-wrapper {
+    width: 100%; /* Ensure inputs take up full width */
+    max-width: 100%; /* Prevent overflow */
+  }
+
+  /* Adjust label size for readability */
+  .input-wrapper label {
+    font-size: 3vw;
+    top: -12px;
+    left: 10px;
+  }
+
+  /* Ensure inputs remain readable */
+  input {
+    font-size: 4vw;
+    padding: 12px;
+    max-width: 100%;
+  }
+}
+
+
+
