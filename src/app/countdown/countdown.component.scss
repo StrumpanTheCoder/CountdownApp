@@ -1,104 +1,96 @@
 /* Make the countdown container take full screen height & center everything */
 .countdown-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    height: 100vh; /* Fix scroll issue by ensuring everything fits */
-    width: 100vw;
-    padding: 3vh 20px; /* Adjust spacing */
-    box-sizing: border-box;
-    background-color: #F5F3F3;
-    overflow: hidden; /* Prevents vertical scrolling */
-    font-family: 'Arial', sans-serif; 
-  }
-  
-  /* Title styling */
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: min(12vw, 14vh);
-    font-weight: bold;
-    margin-bottom: 1vh;
-    line-height: 1.3;
-    color: #72035D;
-    width: 90vw;
-    white-space: nowrap;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif; 
-  }
-  
-  /* Countdown styling */
-  p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: min(12vw, 12vh);
-    font-weight: normal;
-    color: black;
-    margin-bottom: 1vh;
-    line-height: 1.3;
-    width: 90vw;
-    white-space: nowrap;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif; 
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  height: 100vh; /* Fix scroll issue by ensuring everything fits */
+  width: 100vw;
+  padding: 3vh 20px; /* Adjust spacing */
+  box-sizing: border-box;
+  background-color: #f5f3f3;
+  overflow: hidden; /* Prevents vertical scrolling */
+  font-family: 'Arial', sans-serif;
+}
 
-  h1, p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-  }
-  
-  /* Form container */
-  .form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2vw; /* Ensures spacing between input fields */
-    width: 90%;
-    max-width: 700px;
-    justify-content: center;
-    margin-bottom: 3vh;
-    margin-top: 10vh;
-  }
-  
-  /* Input styling */
-  input {
-    font-size: 1rem;
-    padding: 15px;
-    border: 2px solid #D5D3D3;
-    border-radius: 5px;
-    text-align: left;
-    width: 100%;
-    background-color: #F5F3F3;
-    font-family: 'Arial', sans-serif; 
-  }
+/* Title styling */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // font-size: min(12vw, 14vh);
+  font-weight: bold;
+  margin-bottom: 1vh;
+  color: #72035d;
+}
 
-  /* Input field wrapper */
+/* Countdown styling */
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // font-size: min(12vw, 12vh);
+  font-weight: normal;
+  color: black;
+  margin-bottom: 1vh;
+}
+
+h1,
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form container */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw; /* Ensures spacing between input fields */
+  width: 90%;
+  max-width: 700px;
+  justify-content: center;
+  margin-bottom: 3vh;
+  margin-top: 10vh;
+}
+
+/* Input styling */
+input {
+  font-size: 1rem;
+  padding: 15px;
+  border: 2px solid #d5d3d3;
+  border-radius: 5px;
+  text-align: left;
+  width: 100%;
+  background-color: #f5f3f3;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Input field wrapper */
 .input-wrapper {
-    position: relative;
-    width: 100%;
-    min-width: 200px; /* Prevents input fields from being too small */
-    max-width: 300px; /* Keeps input fields from stretching too much */
-  }
-  
+  position: relative;
+  width: 100%;
+  min-width: 200px; /* Prevents input fields from being too small */
+  max-width: 300px; /* Keeps input fields from stretching too much */
+}
 
-  .input-wrapper label {
-    position: absolute;
-    top: -10px; /* Moves label above the input field */
-    left: 12px; /* Positions label correctly */
-    background: #F5F3F3; /* Matches page background */
-    padding: 0 6px; /* Adds padding so the label text doesn't touch edges */
-    font-size: 1vw; /* Small, readable label */
-    color: black;
-    transition: all 0.2s ease-in-out; /* Smooth animation when resizing */
-    font-family: 'Arial', sans-serif; /* Restore original font */
-  }
+.input-wrapper label {
+  position: absolute;
+  top: -1vh; /* Moves label above the input field */
+  left: 1.2vh; /* Positions label correctly */
+  background: #f5f3f3; /* Matches page background */
+  padding: 0 6px; /* Adds padding so the label text doesn't touch edges */
+  font-size: 1vw; /* Small, readable label */
+  color: black;
+  transition: all 0.2s ease-in-out; /* Smooth animation when resizing */
+  font-family: 'Arial', sans-serif; /* Restore original font */
+}
 
-  /* ✅ Responsive adjustments for smaller screens (Portrait Mode) */
+/* Responsive adjustments for smaller screens (Portrait Mode) */
 @media (max-width: 600px) {
   .countdown-container {
     padding: 4vh 20px; /* Adjust padding to balance spacing */
@@ -106,15 +98,23 @@
 
   /* Ensure title stays properly sized */
   h1 {
-    font-size: min(10vw, 9vh); /* Keep title proportional */
+    // font-size: min(10vw, 9vh); /* Keep title proportional */
     margin-top: 20vh;
-    margin-bottom: 0.5vh;
+    margin-bottom: 1.5vh;
   }
 
   /* Ensure countdown stays balanced */
   p {
-    font-size: min(9vw, 8vh); /* Keep countdown proportional */
+    // font-size: min(10vw, 8vh); /* Keep countdown proportional */
     margin-bottom: 16.5vh; /* More space below countdown */
+  }
+
+  h1,
+  p {
+   // font-size: min(10vw, 9vh); /* Ensure both title and countdown text have the same font size */
+    width: 90vw; /* Ensure both title and countdown text have the same width */
+    margin: 0 auto; /* Center align both title and countdown text */
+    padding: 0 0; /* Remove padding */
   }
 
   /* Stack inputs vertically instead of side-by-side */
@@ -136,8 +136,10 @@
   /* Adjust label size for readability */
   .input-wrapper label {
     font-size: 3vw;
-    top: -10px;
-    left: 12px;
+    // Note to self: Place the labels depending on screen
+    // and input field size in a responsive way 
+    top: -1vh;
+    left: 1.2vh;
   }
 
   /* Ensure inputs remain readable */
@@ -147,6 +149,3 @@
     max-width: 90%;
   }
 }
-
-
-
