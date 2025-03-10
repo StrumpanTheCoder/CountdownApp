@@ -1,21 +1,22 @@
 import {
-  Component,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  AfterViewInit,
-  Renderer2,
-  HostListener,
+  Component, // Defines the component and its metadata. Used in the @Component decorator.
+  OnInit, // Lifecycle hook that is called after Angular has initialized all data-bound properties. Implemented in the component class to run initialization logic.
+  ElementRef, // Provides a way to access the DOM element associated with a component. Used with @ViewChild to manipulate DOM elements directly.
+  ViewChild, // Allows you to access a child component, directive, or DOM element from the parent component. Used to get references to DOM elements or child components.
+  AfterViewInit, // Lifecycle hook that is called after Angular has fully initialized a component's view. Implemented in the component class to run logic that depends on the view being fully initialized.
+  Renderer2, // Provides a way to manipulate the DOM in a platform-independent way. Used to set styles, attributes, and properties on DOM elements.
+  HostListener, // Decorator that allows you to listen to events on the host element of the component. Used to handle events like window resize.
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms' // Provides support for template-driven forms. Imported in the component to use Angular forms features like ngModel.
 
 @Component({
-  selector: 'app-countdown',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './countdown.component.html',
-  styleUrls: ['./countdown.component.scss'],
+  selector: 'app-countdown', // The CSS selector that identifies this component in a template
+  standalone: true, // Indicates that this component is a standalone component
+  imports: [FormsModule], // Specifies the modules that this component imports
+  templateUrl: './countdown.component.html', // The path to the HTML template file for this component
+  styleUrls: ['./countdown.component.scss'], // The path to the CSS/SCSS stylesheets for this component
 })
+
 export class CountdownComponent implements OnInit, AfterViewInit {
   eventTitle: string = ''
   eventDate: string = ''
