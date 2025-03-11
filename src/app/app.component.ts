@@ -1,3 +1,4 @@
+// This is the root component to bootstrap 
 import { Component } from '@angular/core';
 import { CountdownComponent } from './countdown/countdown.component'; // Import the countdown component
 

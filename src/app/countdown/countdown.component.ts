@@ -46,8 +46,8 @@ export class CountdownComponent implements OnInit, AfterViewInit {
     // Kör bara om countdownText har värde
     const now = new Date().getTime()
     const eventDate = new Date(this.eventDate + 'T00:00:00').getTime()
-    const timeLeft = eventDate - now
-    if (timeLeft <= 0 && this.countdownText == '') {
+    const timeLeft = eventDate - now // remaining time in milliseconds
+    if (timeLeft <= 0 && this.countdownText == '') { //second condition is to avoid redundant updates
       this.countdownText = 'The event has started!'
       this.adjustElementSize(this.titleElement)
       this.adjustElementSize(this.countdownElement)
@@ -86,15 +86,13 @@ export class CountdownComponent implements OnInit, AfterViewInit {
   }
 
   saveData(): void {
+    // localStorage ligger i dev tools under Application
     localStorage.setItem('eventTitle', this.eventTitle)
     localStorage.setItem('eventDate', this.eventDate)
   }
 
   startCountdown(): void {
     this.saveData()
-
-    // Check if there is an existing interval timer and clear it if it exists
-    if (this.timerInterval) clearInterval(this.timerInterval)
 
     // Set a new interval timer to update the countdown every second
     /*This function is an anonymous arrow function used as a callback inside setInterval(). It runs every second, 
@@ -105,6 +103,7 @@ export class CountdownComponent implements OnInit, AfterViewInit {
       const now = new Date().getTime()
 
       // Get the event date and time
+      // The 'T00:00:00' ensures that the time is set to midnight (00:00:00) on the specified date.
       const eventDate = new Date(this.eventDate + 'T00:00:00').getTime()
 
       // Calculate the time left until the event
@@ -122,6 +121,7 @@ export class CountdownComponent implements OnInit, AfterViewInit {
       }
 
       // Calculate the remaining days, hours, minutes, and seconds
+      // Modulo Operator % is used to get the remainder of a division operation
       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
       const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
@@ -130,8 +130,7 @@ export class CountdownComponent implements OnInit, AfterViewInit {
       // Update the countdown text
       this.countdownText = `${days} days, ${hours} h, ${minutes} m, ${seconds} s`
 
-      // Adjust the sizes and margins of the title and countdown elements
-      // Hämta eventDate innan dessa körs alt kör dem bara om eventDate har värde annat än null/''
+      // Adjust the sizes and margins of the title and countdown elements/
       if (this.countdownText !== '') {
         this.adjustElementSize(this.titleElement)
         this.adjustElementSize(this.countdownElement)
@@ -168,6 +167,8 @@ export class CountdownComponent implements OnInit, AfterViewInit {
       this.countdownElement.nativeElement.style.fontSize = element.style.fontSize
     }*/
 
+      // The null check here makes sense as this.countdownElement is an object that references 
+      // the DOM element with the #countdownElement template reference variable.
     if (elementRef === this.titleElement && this.countdownElement) {
       const titleSize = this.titleElement.nativeElement.style.fontSize
       this.countdownElement.nativeElement.style.fontSize = titleSize
@@ -179,6 +180,7 @@ export class CountdownComponent implements OnInit, AfterViewInit {
     const countdownElement = this.countdownElement.nativeElement
 
     const titleFontSize = parseFloat(window.getComputedStyle(titleElement).fontSize)
+    // Calculate the margins based on the font size of the title element.
     const marginBottom = titleFontSize * 0.1 // Adjust this factor as needed
     const marginTop = titleFontSize * 0.1 // Adjust this factor as needed
 
