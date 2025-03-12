@@ -97,6 +97,12 @@ export class CountdownComponent implements OnInit, AfterViewInit {
     }, 1000)
   }
 
+  adjustElements(): void {
+    this.adjustElementSize(this.titleElement)
+    this.adjustElementSize(this.countdownElement)
+    this.adjustMargins()
+  }
+
   adjustElementSize(elementRef: ElementRef): void {
     const element = elementRef.nativeElement
     let fontSize = 10
@@ -112,14 +118,11 @@ export class CountdownComponent implements OnInit, AfterViewInit {
       element.style.fontSize = `${fontSize}vw`
     }
 
-    // Adjust the top margin proportionally
     if (elementRef === this.titleElement) {
-      const marginTop = fontSize * 0.5 // Adjust this factor as needed
+      const marginTop = fontSize * 0.5
       this.renderer.setStyle(element, 'margin-top', `${marginTop}vh`)
     }
 
-    // The null check here makes sense as this.countdownElement is an object that references
-    // the DOM element with the #countdownElement template reference variable.
     if (elementRef === this.titleElement && this.countdownElement) {
       const titleSize = this.titleElement.nativeElement.style.fontSize
       this.countdownElement.nativeElement.style.fontSize = titleSize
@@ -131,24 +134,16 @@ export class CountdownComponent implements OnInit, AfterViewInit {
     const countdownElement = this.countdownElement.nativeElement
 
     const titleFontSize = parseFloat(window.getComputedStyle(titleElement).fontSize)
-    // Calculate the margins based on the font size of the title element.
-    const marginBottom = titleFontSize * 0.1 // Adjust this factor as needed
-    const marginTop = titleFontSize * 0.1 // Adjust this factor as needed
+    const marginBottom = titleFontSize * 0.1
+    const marginTop = titleFontSize * 0.1
 
     this.renderer.setStyle(titleElement, 'margin-bottom', `${marginBottom}px`)
     this.renderer.setStyle(countdownElement, 'margin-top', `${marginTop}px`)
   }
 
-  adjustElements(): void {
-    this.adjustElementSize(this.titleElement)
-    this.adjustElementSize(this.countdownElement)
-    this.adjustMargins()
-  }
-
   updateTitleAndCountdown(): void {
     this.eventTitle = this.tempEventTitle
     this.eventDate = this.tempEventDate
-    this.saveData()
     this.startCountdown()
     this.titleInput.nativeElement.blur()
     this.dateInput.nativeElement.blur()
