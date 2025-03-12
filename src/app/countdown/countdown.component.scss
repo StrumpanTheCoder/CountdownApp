@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Center horizontally */
+  align-items: center;
   text-align: center;
-  height: 100vh; /* Fix scroll issue by ensuring everything fits */
+  height: 100vh;
   width: 100vw;
-  padding: 3vh 20px; /* Adjust spacing */
+  padding: 3vh 20px;
   box-sizing: border-box;
   background-color: #f5f3f3;
   overflow: hidden; /* Prevents vertical scrolling */
@@ -19,7 +19,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  // font-size: min(12vw, 14vh);
   font-weight: bold;
   margin-bottom: 1vh;
   color: #72035d;
@@ -30,7 +29,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  // font-size: min(12vw, 12vh);
   font-weight: normal;
   color: black;
   margin-bottom: 1vh;
@@ -46,23 +44,21 @@ p {
   font-family: 'Arial', sans-serif;
 }
 
-/* Form container */
 .form-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2vw; /* Ensures spacing between input fields */
+  gap: 2vw;
   width: 90%;
-  max-width: 700px;
+  max-width: 800px;
   justify-content: center;
   margin-bottom: 3vh;
   margin-top: 10vh;
 }
 
-/* Input styling */
 input {
   font-size: 1rem;
   padding: 15px;
-  border: 2px solid #d5d3d3;
+  border: 2px solid #757575;
   border-radius: 5px;
   text-align: left;
   width: 100%;
@@ -70,79 +66,71 @@ input {
   font-family: 'Arial', sans-serif;
 }
 
-/* Input field wrapper */
 .input-wrapper {
   position: relative;
   width: 100%;
-  min-width: 200px; /* Prevents input fields from being too small */
-  max-width: 300px; /* Keeps input fields from stretching too much */
+  min-width: 200px;
+  max-width: 350px;
 }
 
 .input-wrapper label {
   position: absolute;
-  top: -1vh; /* Moves label above the input field */
-  left: 1.2vh; /* Positions label correctly */
-  background: #f5f3f3; /* Matches page background */
-  padding: 0 6px; /* Adds padding so the label text doesn't touch edges */
-  font-size: 1vw; /* Small, readable label */
+  top: -1vh;
+  left: 1.2vh;
+  background: #f5f3f3;
+  padding: 0 6px;
+  font-size: 1vw;
   color: black;
-  transition: all 0.2s ease-in-out; /* Smooth animation when resizing */
-  font-family: 'Arial', sans-serif; /* Restore original font */
+  transition: all 0.2s ease-in-out;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Responsive adjustments for smaller screens (Portrait Mode) */
 @media (max-width: 600px) {
   .countdown-container {
-    padding: 4vh 20px; /* Adjust padding to balance spacing */
-  }
-
-  /* Ensure title stays properly sized */
-  h1 {
-    // font-size: min(10vw, 9vh); /* Keep title proportional */
-    margin-top: 20vh;
-    margin-bottom: 1.5vh;
-  }
-
-  /* Ensure countdown stays balanced */
-  p {
-    // font-size: min(10vw, 8vh); /* Keep countdown proportional */
-    margin-bottom: 16.5vh; /* More space below countdown */
+     padding: 4vh 20px;
+     justify-content: flex-start;
   }
 
   h1,
   p {
-   // font-size: min(10vw, 9vh); /* Ensure both title and countdown text have the same font size */
-    width: 90vw; /* Ensure both title and countdown text have the same width */
-    margin: 0 auto; /* Center align both title and countdown text */
-    padding: 0 0; /* Remove padding */
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 0;
   }
 
-  /* Stack inputs vertically instead of side-by-side */
+  h1 {
+    padding-top: 12.5vh;
+    margin-bottom: 5.5vh;
+  }
+
+  p {
+    padding-top: 3vh;
+    margin-bottom: 16.5vh;
+  }
+
   .form-container {
     display: flex;
-    flex-direction: column; /* Stack inputs */
-    align-items: center; /* Center inputs */
-    gap: 6vh; /* Adjust spacing between inputs */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6vh;
     width: 90%;
-    max-width: 400px; /* Prevent inputs from stretching too wide */
-    margin-top: 5vh; /* Adjust spacing */
+    max-width: 400px;
+    margin-top: 8vh;
   }
 
   .input-wrapper {
-    width: 100%; /* Ensure inputs take up full width */
-    max-width: 100%; /* Prevent overflow */
+    width: 85%;
+    max-width: 85%;
   }
 
-  /* Adjust label size for readability */
   .input-wrapper label {
     font-size: 3vw;
-    // Note to self: Place the labels depending on screen
-    // and input field size in a responsive way 
     top: -1vh;
     left: 1.2vh;
   }
 
-  /* Ensure inputs remain readable */
   input {
     font-size: 4vw;
     padding: 12px;

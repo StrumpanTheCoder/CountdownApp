@@ -1,6 +1,7 @@
 # Countdown Timer
 
-This project is a countdown timer built with Angular. It allows users to set a title and date for an event, and it displays the time remaining until the event.
+This project is a countdown timer built with Angular, designed as a Single Page Application (SPA) using Standalone Components.
+Users can set a custom title and event date, and the app dynamically displays the time remaining until the event.
 
 ## Prerequisites
 
