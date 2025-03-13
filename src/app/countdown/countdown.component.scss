@@ -85,11 +85,67 @@ input {
   font-family: 'Arial', sans-serif;
 }
 
+/* Responsive adjustments specified for iPad Mini, iPad Air, iPad Pro and Surface Pro 7 */
+@media (max-width: 820px) and (max-height: 1180px),
+  (max-width: 768px) and (max-height: 1024px),
+  (max-width: 1024px) and (height: 1366.4px),
+  (max-width: 912px) and (max-height: 1368px) {
+  .countdown-container {
+    padding: 4vh 20px;
+    justify-content: flex-start;
+  }
+
+  h1,
+  p {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 0;
+  }
+
+  h1 {
+    padding-top: 12.5vh;
+    margin-bottom: 5.5vh;
+  }
+
+  p {
+    padding-top: 3vh;
+    margin-bottom: 16.5vh;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6vh;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 8vh;
+  }
+
+  .input-wrapper {
+    width: 85%;
+    max-width: 85%;
+  }
+
+  .input-wrapper label {
+    font-size: 1.4vw;
+    top: -0.8vh;
+    left: 2vh;
+  }
+
+  input {
+    font-size: 1.4vw;
+    padding: 12px;
+    max-width: 90%;
+  }
+}
+
 /* Responsive adjustments for smaller screens (Portrait Mode) */
 @media (max-width: 600px) {
   .countdown-container {
-     padding: 4vh 20px;
-     justify-content: flex-start;
+    padding: 4vh 20px;
+    justify-content: flex-start;
   }
 
   h1,
@@ -126,13 +182,13 @@ input {
   }
 
   .input-wrapper label {
-    font-size: 3vw;
-    top: -1vh;
-    left: 1.2vh;
+    font-size: 2.5vw;
+    top: -0.8vh;
+    left: 1vh;
   }
 
   input {
-    font-size: 4vw;
+    font-size: 2.5vw;
     padding: 12px;
     max-width: 90%;
   }
