@@ -71,12 +71,12 @@ input {
   position: relative;
   width: 100%;
   min-width: 100px;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .input-wrapper label {
   position: absolute;
-  top: -1vh;
+  top: -0.8vh;
   left: 1.2vh;
   background: #f5f3f3;
   padding: 0 6px;
@@ -87,7 +87,7 @@ input {
 }
 
 /* Responsive adjustments for smaller screens (Portrait Mode) */
-@media (max-width: 800px) {
+@media (max-width: 854px) {
   .countdown-container {
     padding: 4vh 20px;
     justify-content: flex-start;
@@ -97,7 +97,7 @@ input {
   p {
     width: 90vw;
     margin: 0 auto;
-    padding: 0 0;
+    padding: 0;
   }
 
   h1 {
@@ -134,7 +134,7 @@ input {
 
   input {
     font-size: 2.5vw;
-    padding: 14px;
+    padding: 1.3vh;
     max-width: 90%;
   }
 }
