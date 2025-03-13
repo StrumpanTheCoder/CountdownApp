@@ -12,6 +12,7 @@
   background-color: #f5f3f3;
   overflow: hidden; /* Prevents vertical scrolling */
   font-family: 'Arial', sans-serif;
+  
 }
 
 /* Title styling */
@@ -93,6 +94,9 @@ input {
   .countdown-container {
     padding: 4vh 20px;
     justify-content: flex-start;
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default styling for Firefox */
+    appearance: none; /* Remove default styling for other browsers */
   }
 
   h1,
@@ -100,6 +104,9 @@ input {
     width: 90vw;
     margin: 0 auto;
     padding: 0 0;
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default styling for Firefox */
+    appearance: none; /* Remove default styling for other browsers */
   }
 
   h1 {
