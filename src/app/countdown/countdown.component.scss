@@ -12,7 +12,6 @@
   background-color: #f5f3f3;
   overflow: hidden; /* Prevents vertical scrolling */
   font-family: 'Arial', sans-serif;
-  
 }
 
 /* Title styling */
@@ -57,7 +56,7 @@ p {
 }
 
 input {
-  font-size: 1.2vw;
+  font-size: 1rem;
   padding: 18px;
   border: 2px solid #757575;
   border-radius: 5px;
@@ -80,14 +79,29 @@ input {
   left: 1.2vh;
   background: #f5f3f3;
   padding: 0 6px;
-  font-size: 1.2vw;
+  font-size: 1rem;
   color: black;
   transition: all 0.2s ease-in-out;
   font-family: 'Arial', sans-serif;
 }
 
+/* Responsive adjustments for medium sized screens */
+@media (max-width: 911px) {
+  .form-container {
+    max-width: 700px;
+  }
+
+  .input-wrapper {
+    max-width: 300px;
+  }
+
+  .input-wrapper label {
+    top: -0.5vh;
+  }
+}
+
 /* Responsive adjustments for smaller screens (Portrait Mode) */
-@media (max-width: 854px) {
+@media (max-width: 800px) {
   .countdown-container {
     padding: 4vh 20px;
     justify-content: flex-start;
@@ -127,13 +141,13 @@ input {
   }
 
   .input-wrapper label {
-    font-size: 2.5vw;
+    font-size: 1rem;
     top: -0.8vh;
     left: 1vh;
   }
 
   input {
-    font-size: 2.5vw;
+    font-size: 1rem;
     padding: 1.3vh;
     max-width: 90%;
   }
