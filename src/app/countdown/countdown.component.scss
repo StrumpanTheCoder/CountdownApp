@@ -85,8 +85,20 @@ input {
   font-family: 'Arial', sans-serif;
 }
 
+/* Responsive adjustments for medium-big sized screens */
+@media (max-width: 960px) {
+  .input-wrapper label {
+    font-size: 1.5vw; 
+    top: -1vh;
+  }
+
+  input {
+    font-size: 1.5vw; 
+  }
+}
+
 /* Responsive adjustments for medium sized screens */
-@media (max-width: 911px) {
+@media (max-width: 913px) {
   .form-container {
     max-width: 700px;
   }
@@ -96,7 +108,8 @@ input {
   }
 
   .input-wrapper label {
-    top: -0.5vh;
+   // font-size: 1.5vw;
+    top: -0.8vh;
   }
 }
 
@@ -141,14 +154,23 @@ input {
   }
 
   .input-wrapper label {
-    font-size: 1rem;
-    top: -0.8vh;
-    left: 1vh;
+    top: -0.6vh;
+    left: 1.6vh;
   }
 
   input {
-    font-size: 1rem;
     padding: 1.3vh;
     max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .input {
+    font-size: 2.5vw;
+  }
+
+  .input-wrapper label {
+    top: -0.5vh;
+    left: 1.2vh;
   }
 }
