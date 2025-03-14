@@ -23,7 +23,9 @@ Users can set a custom title and event date, and the app dynamically displays th
 
 ## Running the app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+Link to deployed working web page: [countdownapp-ingrid.](https://countdownapp-ingrid.netlify.app/)
 
 ## Building the app
 
